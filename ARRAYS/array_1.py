@@ -25,5 +25,4 @@ for i in range(len(array)):
 
 # SEARCHING FOR A DATA ELEMENT IN THE ARRAY 
 # accessing the index of an element in the array 
-print(f'The location of the element 30 in the array is: {array.index(30)}')
-
+# print(f'The location of the element 30 in the array is: {array.index(30)}')

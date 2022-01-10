@@ -3,14 +3,10 @@ class Node:
     def __init__(self, data = None, next = None):
         self.data = data
         self.next = next
-
-
 # now creating a class called LinkedList which will keep track of all the Nodes 
 class LinkedList:
     def __init__(self):
         self.head = None
-
-    
     # method to insert a node at the beginning of the Linked List 
     def insert_at_beginning(self, data):
         node = Node(data, self.head)
@@ -37,6 +33,9 @@ class LinkedList:
         if index == 0:
             self.insert_at_beginning(data)
             return
+        elif index == self.get_length() - 1:
+            self.insert_at_end(data)
+            return
         else:
             count = 0
             itr = self.head
@@ -47,7 +46,6 @@ class LinkedList:
                     break
                 itr = itr.next
                 count += 1
-        
     # method to search for a node at the given index of the Linked List 
     def search_at(self, index):
         if index < 0 or index >= self.get_length():
@@ -63,8 +61,6 @@ class LinkedList:
                     return itr.data
                 itr = itr.next
                 count += 1
-
-
     
     # method to delete a node from the LinkedList
     def remove_at(self, index):
@@ -98,7 +94,6 @@ class LinkedList:
             itr = itr.next
             count += 1
         return count
-
     
     #method to traverse the linkedList.
     def printll(self):
@@ -116,12 +111,14 @@ class LinkedList:
 l = LinkedList()
 l.insert_at_beginning(5)
 l.insert_at_beginning(10)
-l.insert_at_end(12)
+# l.insert_at_end(12)
 # l.insert_values(['Raffay', 'Ali'])
+# print(l.printll())
+l.insert_at(1, 1200)
 print(l.printll())
-l.insert_at(1, 344)
-print(l.printll())
-print(l.search_at(34))
+# l.insert_at(1, 344)
+# print(l.printll())
+# print(l.search_at(34))
 # l.remove_at(1)
 # print(f'The length of the linked list is: {l.get_length()}')
 # print(l.printll())
